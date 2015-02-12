@@ -1,30 +1,21 @@
 package hello
 
 import org.springframework.boot.SpringApplication
-import org.springframework.web.bind.annotation.{RequestMapping,RestController}
+import org.springframework.context.annotation._
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration
 
 /**
  * This object bootstraps Spring Boot web application.
  * Via Gradle: gradle bootRun
  *
- * @author sithu
+ * @author Neha Wani
  * @since 1.0
- * modifiedBy NehaWani
- * modifiedDate 02-10-2015
  */
+
+@EnableAutoConfiguration
 object HelloWebApplication {
 
-	def main(args: Array[String]) {
-	   SpringApplication.run(classOf[HelloConfig]);
-	}
-}
-
-@RestController
-class HelloWorld
-{
-	@RequestMapping(Array{"/"})
-	def sayHello():String =
-	{
-		"Hello World from Neha!!!"
-	}
+  def main(args: Array[String]) {
+    SpringApplication.run(classOf[HelloConfig]);
+  }
 }
